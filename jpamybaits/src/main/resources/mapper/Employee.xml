@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.jpamybaits.employeemapper.EmployeeMapper">
+    <insert id="insertEmployee" parameterType="com.example.jpamybaits.Employee.Employee">
+        INSERT INTO employee (name, email, age)
+        VALUES (#{name}, #{email}, #{age})
+    </insert>
+
+    <select id="findEmployeeById" parameterType="Long" resultType="com.example.jpamybaits.Employee.Employee">
+        SELECT * FROM employee WHERE id = #{id}
+    </select>
+
+    <delete id="deleteEmployeeById" parameterType="Long">
+        DELETE FROM employee WHERE id = #{id}
+    </delete>
+</mapper>
+
+
+
+
+
+
